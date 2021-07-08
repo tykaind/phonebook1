@@ -4,19 +4,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+//파라미터에서 꺼내기
 String name = request.getParameter("name");
 String hp = request.getParameter("hp");
 String company = request.getParameter("company");
 System.out.println(name + ", " + hp + ", " + company);
-
+//vo로 묶기
 PersonVo personVo = new PersonVo(name, hp, company);
 
 PhoneDao phoneDao = new PhoneDao();
 phoneDao.personInsert(personVo);
 
+//리스트 가져오기
 List<PersonVo> personList = phoneDao.getPersonList();
-//System.out.println(personList.toString());
+
+response.sendRedirect("./list.jsp");
+
+
+
 %>
+
+
+
+<%--
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +35,7 @@ List<PersonVo> personList = phoneDao.getPersonList();
 </head>
 <body>
 
-	<h1>전화번호 리스트-insert</h1>
+ 	<h1>전화번호 리스트-insert</h1>
 	<p>입력한 정보 내역입니다.</p>
 
 	<%
@@ -49,6 +59,8 @@ List<PersonVo> personList = phoneDao.getPersonList();
 	<%
 	}
 	%>
-	<a href="./list.jsp"> 리스트 </a>
+	<a href="./list.jsp"> 리스트 </a> --%>
+	
+	
 </body>
 </html>

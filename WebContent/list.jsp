@@ -41,6 +41,9 @@ List<PersonVo> personList = phoneDao.getPersonList();
 				<td>회사</td>
 				<td><%= personList.get(i).getCompany() %></td>
 			</tr>
+			<tr>
+				<td colspan="2" align="center"><a href="./delete.jsp?id=<%= personList.get(i).getPersonId() %>">삭제</a></td>
+			</tr>
 		</table>
 		<br>
 	<%

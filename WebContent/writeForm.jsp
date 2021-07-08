@@ -14,11 +14,14 @@
 		아래 항목을 기입하고 "등록" 버튼을 클릭하세요!
 	</p>
 	
-	<form action="./insert.jsp" method="get">
+	<form action="./insert.jsp" method="post">
 		
 		이름(name): <input type="text" name="name" value=""> <br>
 		핸드폰(hp): <input type="text" name="hp" value=""> <br>
 		회사(company): <input type="text" name="company" value=""> <br>
+		
+		<input type="checkbox name="pet" value="dog">개 <br>
+		<input type="checkbox name="pet" value="cat">고양이<br>
 		<button type="submit">등록</button>
 	</form>
 	
